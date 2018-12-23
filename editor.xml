@@ -1,13 +1,5 @@
 <application>
   <component name="DefaultFont">
-    <option name="FONT_SIZE" value="14" />
-  </component>
-  <component name="TodoConfiguration">
-    <pattern pattern="\btodo\b.*" />
-    <pattern pattern="\bfixme\b.*" />
-    <pattern pattern="\boptimize\b.*" />
-    <filter name="Optimization">
-      <pattern index="2" />
-    </filter>
+    <option name="FONT_SIZE" value="18" />
   </component>
 </application>
