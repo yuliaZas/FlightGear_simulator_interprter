@@ -6,24 +6,24 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(flight_simulator
-        assigmentCommand.cpp
-        assigmentCommand.h
-        command.cpp
-        command.h
-        connectCommand.cpp
-        connectCommand.h
-        ifCommand.cpp
-        ifCommand.h
+        command/assigmentCommand.cpp
+        command/assigmentCommand.h
+        command/command.cpp
+        command/command.h
+        command/connectCommand.cpp
+        command/connectCommand.h
+        command/ifCommand.cpp
+        command/ifCommand.h
         main.cpp
-        ODSCommand.cpp
-        ODSCommand.h
+        command/ODSCommand.cpp
+        command/ODSCommand.h
         Parser.cpp
         Parser.h
-        printCommand.cpp
-        printCommand.h
-        sleepCommand.cpp
-        sleepCommand.h
-        varCommand.cpp
-        varCommand.h
-        whileCommand.cpp
-        whileCommand.h)
+        command/printCommand.cpp
+        command/printCommand.h
+        command/sleepCommand.cpp
+        command/sleepCommand.h
+        command/varCommand.cpp
+        command/varCommand.h
+        command/whileCommand.cpp
+        command/whileCommand.h)
