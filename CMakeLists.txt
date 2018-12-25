@@ -54,4 +54,6 @@ add_executable(flight_simulator
         Expression/SmallerEqual.cpp
         Expression/ExpressionFactory.h
         Expression/ExpressionFactory.cpp
+        Lexer.h
+        Lexer.cpp
         )
