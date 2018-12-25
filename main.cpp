@@ -1,6 +1,15 @@
 #include "Parser.h"
-// #include "lexer.h"
+#include "Lexer.h"
+#include "Expression/ExpressionFactory.h"
+
 int main() {
+	//check factory
+	ExpressionFactory x = ExpressionFactory();
+
+	Expression* a = x.expressionEvaluate("10+2");
+	Expression* c = x.expressionEvaluate("-10+-8*3");
+	Expression* b = x.expressionEvaluate("100 * 2 + 12");
+    // check git
 	vector<string> args;
 	//args.insert(args.end(), "var");
 	//args.insert(args.end(), "x");

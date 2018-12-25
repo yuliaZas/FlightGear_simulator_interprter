@@ -27,6 +27,8 @@ Parser::Parser(vector<string> args)
 	commandMap.insert(pair<string, command*>("print", printCom));
 	commandMap.insert(pair<string, command*>("sleep", sleepCom));
 	commandMap.insert(pair<string, command*>("if", ifCom));
+	// Initialize an empty bind map
+	this->bindMap = map<string, string>();
 }
 
 
@@ -52,7 +54,7 @@ int Parser::parse()
 			}
 		}
 		else {
-			index += iterCom->second->execute(tokens, index, &symbolTable, commandMap);
+			index += iterCom->second->execute(tokens, index, &symbolTable, commandMap, &bindMap);
 		}
 	}
 	return 0;
