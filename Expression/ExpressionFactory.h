@@ -44,6 +44,12 @@ protected:
      */
     vector<string>* stringExpToVec(string str);
     /**
+     * Checks if the char is a digit
+     * @param ch the curr char
+     * @return true or false
+     */
+    bool isDig(char ch);
+    /**
      * Checks if the char is a operator
      * @param op the curr char
      * @return true or false

@@ -8,9 +8,9 @@ ExpressionFactory::ExpressionFactory() {}
 
 Expression* ExpressionFactory::expressionEvaluate(string exp) {
     char prevVal;
-    vector<string> exp = stringExpToVec(exp);
+    vector<string> *strVec  = stringExpToVec(exp);
 
-    for (string token : exp) {
+    for (string token : *strVec) {
         cout << token << endl;
     }
     /*
@@ -54,34 +54,74 @@ Expression* ExpressionFactory::expressionEvaluate(string exp) {
 }
 
 vector<string>* ExpressionFactory::stringExpToVec(string str) {
+    string withoutSpaces;
     vector<string> tokenVec;
-    string temp = "";
+    vector<string>* retVec;
+
+    //making a string with out spaces
     for (int i = 0; i < str.length() ; ++i) {
         if (str[i] == ' '){
-            if (temp == "") {continue;}
-            else {
-                tokenVec.push_back(temp);
-            }
+            continue;
         }
-        else if (isOparator(str[i])) {
-            if (temp == "") {
-                temp = str[i];
-                tokenVec.push_back(temp);
+        else {
+            withoutSpaces.push_back(str[i]);
+        }
+    }
+    string temp = "";
+    int j = 0;
+    bool isNeg = false;
+    //if the first number is negative
+    if (str[0] == '-') {
+        temp += withoutSpaces[0];
+        j = 1;
+        isNeg = true;
+    }
+    //parsing the string to tokens and store it in a vector
+    for (; j < withoutSpaces.length() ; j++) {
+        if (isNeg) {
+            while (isDig(withoutSpaces[j]) || withoutSpaces[j] == '.') {
+                temp += withoutSpaces[j];
+                j++;
+            }
+            isNeg = false;
+            j--;
+            tokenVec.push_back(temp);
+            temp = "";
+        }
+        else if (isOparator(withoutSpaces[j])){
+            //negative num
+            if (withoutSpaces[j] == '-') {
+                if (isOparator(withoutSpaces[j-1])) {
+                    temp += withoutSpaces[0];
+                    j = 1;
+                    isNeg = true;
+                }
             }
             else {
-                //push the token before the operator
+                temp += withoutSpaces[j];
                 tokenVec.push_back(temp);
-                //push the operator
-                temp = str[i];
-                tokenVec.push_back(temp);
+                temp = "";
             }
         }
         else {
-            temp.push_back(str[i]);
+            while (isDig(withoutSpaces[j]) || withoutSpaces[j] == '.') {
+                temp += withoutSpaces[j];
+                j++;
+            }
+            tokenVec.push_back(temp);
+            j--;
+            temp = "";
         }
-        temp = "";
     }
-    return &tokenVec;
+    *retVec = tokenVec;
+    return retVec;
+}
+
+bool ExpressionFactory::isDig(char ch) {
+    if (ch >= '0' && ch <= '9') {
+        return true;
+    }
+    else { return false; }
 }
 
 bool ExpressionFactory::isOparator(char op) {
