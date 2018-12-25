@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.12)
 project(flight_simulator)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -26,4 +26,32 @@ add_executable(flight_simulator
         varCommand.cpp
         varCommand.h
         whileCommand.cpp
-        whileCommand.h)
+        whileCommand.h
+        Expression/Expression.h
+        Expression/Number.h
+        Expression/Number.cpp
+        Expression/BinaryExpression.h
+        Expression/BinaryExpression.cpp
+        Expression/Plus.cpp
+        Expression/Plus.h
+        Expression/Minus.h
+        Expression/Minus.cpp
+        Expression/Mul.h
+        Expression/Mul.cpp
+        Expression/Div.cpp
+        Expression/Div.h
+        Expression/Bigger.h
+        Expression/Bigger.cpp
+        Expression/Smaller.h
+        Expression/Smaller.cpp
+        Expression/Equal.h
+        Expression/Equal.cpp
+        Expression/NotEqual.h
+        Expression/NotEqual.cpp
+        Expression/BiggerEqual.h
+        Expression/BiggerEqual.cpp
+        Expression/SmallerEqual.h
+        Expression/SmallerEqual.cpp
+        Expression/ExpressionFactory.h
+        Expression/ExpressionFactory.cpp
+        )
