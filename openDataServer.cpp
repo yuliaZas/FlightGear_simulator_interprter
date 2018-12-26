@@ -3,7 +3,7 @@
 //
 
 #include "openDataServer.h"
-void* openDataServer:: openServer(void* ar){
+void* openServer(void* ar){
     int sockfd, newsockfd, portno, clilen;
     char buffer[256];
     struct sockaddr_in serv_addr, cli_addr;

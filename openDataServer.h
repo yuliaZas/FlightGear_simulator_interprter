@@ -16,10 +16,7 @@
 #include <sys/socket.h>
 
 
-class openDataServer {
-public:
-    static void* openServer(void* args);
-};
+void* openServer(void* args);
 
 
 #endif //FLIGHT_SIMULATOR_OPENDATASERVER_H

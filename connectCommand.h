@@ -1,5 +1,10 @@
 #pragma once
 #include "command.h"
+
+struct dataC{
+	int portNum;
+	char* server;
+};
 class connectCommand :
 	public command
 {

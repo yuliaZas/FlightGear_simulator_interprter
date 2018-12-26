@@ -1,3 +1,5 @@
+#include <utility>
+
 #include "Parser.h"
 
 
@@ -6,7 +8,7 @@ Parser::Parser(vector<string> args)
 {
 	// Initializa an empty symbol table
 	this->symbolTable = map<string, double>();
-	this->tokens = args;
+	this->tokens = std::move(args);
 	// initialize all the commands
 	command* ODSCom = new ODSCommand();
 	command* connectCom = new connectCommand();
