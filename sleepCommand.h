@@ -1,5 +1,5 @@
 #pragma once
-#include "command/command.h"
+#include "command.h"
 #include <string>
 #include <iostream>       // std::cout, std::endl
 #include <thread>         // std::this_thread::sleep_for

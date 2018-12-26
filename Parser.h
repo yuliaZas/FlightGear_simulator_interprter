@@ -2,15 +2,15 @@
 #include <map>
 #include <string>
 #include <vector>
-#include "command/command.h"
-#include "command/assigmentCommand.h"
-#include "command/printCommand.h"
-#include "command/sleepCommand.h"
-#include "command/varCommand.h"
-#include "command/ODSCommand.h"
-#include "command/connectCommand.h"
-#include "command/whileCommand.h"
-#include "command/ifCommand.h"
+#include "command.h"
+#include "assigmentCommand.h"
+#include "printCommand.h"
+#include "sleepCommand.h"
+#include "varCommand.h"
+#include "ODSCommand.h"
+#include "connectCommand.h"
+#include "whileCommand.h"
+#include "ifCommand.h"
 
 using namespace std;
 class Parser

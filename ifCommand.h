@@ -1,11 +1,11 @@
 #pragma once
-#include "command/command.h"
-class whileCommand :
+#include "command.h"
+class ifCommand :
 	public command
 {
 public:
-	whileCommand();
-	~whileCommand();
+	ifCommand();
+	~ifCommand();
 	int execute(vector <string> args, int index, map<string, double> *symbolTable, map<string, command*> commandParser, map<string, string> *bindMap);
 };
 

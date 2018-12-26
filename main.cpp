@@ -4,11 +4,11 @@
 
 int main() {
 	//check factory
-	ExpressionFactory x = ExpressionFactory();
+	//ExpressionFactory x = ExpressionFactory();
 
-	Expression* a = x.expressionEvaluate("10+2");
-	Expression* c = x.expressionEvaluate("-10+-8*3");
-	Expression* b = x.expressionEvaluate("100 * 2 + 12");
+	//Expression* a = x.expressionEvaluate("10+2");
+	//Expression* c = x.expressionEvaluate("-10+-8*3");
+	//Expression* b = x.expressionEvaluate("100 * 2 + 12");
     // check git
 	vector<string> args;
 	//args.insert(args.end(), "var");

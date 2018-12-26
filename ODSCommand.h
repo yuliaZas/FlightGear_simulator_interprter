@@ -1,5 +1,16 @@
 #pragma once
-#include "command/command.h"
+#include "command.h"
+#include "openDataServer.h"
+#include <pthread.h>
+#include <string>
+#include <iostream>
+using namespace std;
+
+struct data{
+	int portNamber;
+	int seconds;
+	map<string, string> *bind;
+};
 class ODSCommand :
 	public command
 {

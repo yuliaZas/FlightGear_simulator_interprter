@@ -2,31 +2,32 @@ cmake_minimum_required(VERSION 3.12)
 project(flight_simulator)
 
 set(CMAKE_CXX_STANDARD 14)
+set (CMAKE_CXX_FLAGS "-pthread")
 
 include_directories(.)
 
 add_executable(
+        assigmentCommand.h
         assigmentCommand.cpp
-        command/assigmentCommand.h
-        command/command.cpp
-        command/command.h
-        command/connectCommand.cpp
-        command/connectCommand.h
-        command/ifCommand.cpp
-        command/ifCommand.h
+        command.cpp
+        command.h
+        connectCommand.cpp
+        connectCommand.h
+        ifCommand.cpp
+        ifCommand.h
         main.cpp
-        command/ODSCommand.cpp
-        command/ODSCommand.h
+        ODSCommand.cpp
+        ODSCommand.h
         Parser.cpp
         Parser.h
-        command/printCommand.cpp
-        command/printCommand.h
-        command/sleepCommand.cpp
-        command/sleepCommand.h
-        command/varCommand.cpp
-        command/varCommand.h
-        command/whileCommand.cpp
-        command/whileCommand.h
+        printCommand.cpp
+        printCommand.h
+        sleepCommand.cpp
+        sleepCommand.h
+        varCommand.cpp
+        varCommand.h
+        whileCommand.cpp
+        whileCommand.h
         Expression/Expression.h
         Expression/Number.h
         Expression/Number.cpp
@@ -56,4 +57,4 @@ add_executable(
         Expression/ExpressionFactory.cpp
         Lexer.h
         Lexer.cpp
-        )
+        openDataServer.cpp openDataServer.h)

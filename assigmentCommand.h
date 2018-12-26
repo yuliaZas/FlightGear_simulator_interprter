@@ -1,13 +1,12 @@
 #pragma once
-#include "command/command.h"
-#include <string>
-#include <map>
-class varCommand :
+#include "command.h"
+#include <pthread.h>
+class assigmentCommand :
 	public command
 {
 public:
-	varCommand();
-	~varCommand();
+	assigmentCommand();
+	~assigmentCommand();
 	int execute(vector <string> args, int index, map<string, double> *symbolTable, map<string, command*> commandParser, map<string, string> *bindMap);
 };
 

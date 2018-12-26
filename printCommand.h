@@ -1,11 +1,14 @@
 #pragma once
-#include "command/command.h"
-class connectCommand :
+#include "command.h"
+#include <iostream>
+#include <string>
+using namespace std;	
+class printCommand :
 	public command
 {
 public:
-	connectCommand();
-	~connectCommand();
+	printCommand();
+	~printCommand();
 	int execute(vector <string> args, int index, map<string, double> *symbolTable, map<string, command*> commandParser, map<string, string> *bindMap);
 };
 

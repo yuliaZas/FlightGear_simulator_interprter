@@ -1,11 +1,11 @@
 #pragma once
 #include "command.h"
-class assigmentCommand :
+class connectCommand :
 	public command
 {
 public:
-	assigmentCommand();
-	~assigmentCommand();
+	connectCommand();
+	~connectCommand();
 	int execute(vector <string> args, int index, map<string, double> *symbolTable, map<string, command*> commandParser, map<string, string> *bindMap);
 };
 
