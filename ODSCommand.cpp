@@ -24,8 +24,8 @@ int ODSCommand::execute(vector<string> args, int index, map<string, double>* sym
     }
     catch (exception& invalid_argument){
         cout << "invalid input" << endl;
-        return 2;
+        return 3;
     }
     pthread_create(&pthreadID, nullptr, openServer, d);
-    return 2;
+    return 3;
 }
