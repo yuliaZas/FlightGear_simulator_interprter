@@ -3,7 +3,7 @@
 //
 int sofd;
 #include "connectToServer.h"
-void* connectToServer:: connectTo(void* args){
+void* connectTo(void* args){
     struct dataC* d = (struct dataC*)args;
     int sockfd, portno;
     ssize_t n;
@@ -74,7 +74,7 @@ void* connectToServer:: connectTo(void* args){
     printf("%s\n",buffer);
     return 0;
 }
-void set(char* massege){
+void connectToServer:: set(const char* massege){
     int n = write(sofd, massege, strlen(massege));
 
     if (n < 0) {

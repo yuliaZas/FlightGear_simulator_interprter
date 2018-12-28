@@ -17,11 +17,13 @@
 #include <string>
 #include "connectCommand.h"
 
-class connectToServer {
-public:
+
     static void* connectTo(void* args);
-    void set(char* massege);
+class connectToServer{
+public:
+    static void set(const char* massege);
 };
+
 
 
 #endif //FLIGHT_SIMULATOR_CONNECTTOSERVER_H

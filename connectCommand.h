@@ -1,5 +1,6 @@
 #pragma once
 #include "command.h"
+#include "connectToServer.h"
 
 struct dataC{
 	int portNum;
