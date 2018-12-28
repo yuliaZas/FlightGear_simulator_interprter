@@ -18,10 +18,11 @@
 #include "connectCommand.h"
 
 
-    static void* connectTo(void* args);
 class connectToServer{
 public:
     static void set(const char* massege);
+    static void* connectTo(void* args);
+
 };
 
 
