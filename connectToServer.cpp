@@ -3,7 +3,7 @@
 //
 int sofd;
 #include "connectToServer.h"
-void* connectTo(void* args){
+void* connectToServer::connectTo(void* args){
     struct dataC* d = (struct dataC*)args;
     int sockfd, portno;
     ssize_t n;

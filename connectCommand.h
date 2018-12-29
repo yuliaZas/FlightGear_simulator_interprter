@@ -4,7 +4,7 @@
 
 struct dataC{
 	int portNum;
-	string server;
+	char* server;
 };
 class connectCommand :
 	public command
