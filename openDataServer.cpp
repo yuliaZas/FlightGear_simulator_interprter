@@ -1,7 +1,7 @@
 //
 // Created by miri on 25/12/18.
 //
-
+int socfd;
 #include "openDataServer.h"
 void* openServer(void* ar){
     int sockfd, newsockfd, portno, clilen;
@@ -11,6 +11,7 @@ void* openServer(void* ar){
 
     /* First call to socket() function */
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    socfd = sockfd;
 
     if (sockfd < 0) {
         perror("ERROR opening socket");
@@ -64,6 +65,10 @@ void* openServer(void* ar){
         perror("ERROR writing to socket");
         exit(1);
     }
+}
+void get(char buffer[256]){
 
-
+}
+void exit(){
+    close(socfd);
 }

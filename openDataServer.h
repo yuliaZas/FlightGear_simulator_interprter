@@ -17,6 +17,7 @@
 
 
 void* openServer(void* args);
-
+void get(char buffer[256]);
+void exit();
 
 #endif //FLIGHT_SIMULATOR_OPENDATASERVER_H

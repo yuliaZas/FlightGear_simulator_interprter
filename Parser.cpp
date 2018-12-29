@@ -18,6 +18,7 @@ Parser::Parser(vector<string> args)
 	command* printCom = new printCommand();
 	command* sleepCom = new sleepCommand();
 	command* ifCom = new ifCommand();
+	command* exitCom = new exitCommand();
 	// Initialize a command map
 	this->commandMap = map<string, command*>();
 	// insert the commands into the command map
@@ -29,6 +30,7 @@ Parser::Parser(vector<string> args)
 	commandMap.insert(pair<string, command*>("print", printCom));
 	commandMap.insert(pair<string, command*>("sleep", sleepCom));
 	commandMap.insert(pair<string, command*>("if", ifCom));
+	commandMap.insert(pair<string, command*>("exit",exitCom));
 	// Initialize an empty bind map
 	this->bindMap = map<string, string>();
 }

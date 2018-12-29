@@ -13,25 +13,25 @@ int main() {
 	vector<string> args;
 //	args.insert(args.end(), "var");
 //	args.insert(args.end(), "x");
-	//args.insert(args.end(), "openDataServer");
-	//args.insert(args.end(), "5400");
-	//args.insert(args.end(), "10");
+	args.insert(args.end(), "openDataServer");
+	args.insert(args.end(), "5400");
+	args.insert(args.end(), "10");
 //	args.insert(args.end(), "var");
 //	args.insert(args.end(), "p");
 //	args.insert(args.end(), "=");
 //	args.insert(args.end(), "bind");
 //	args.insert(args.end(), "cat");
-	args.insert(args.end(), "var");
+//	args.insert(args.end(), "var");
 //	args.insert(args.end(), "y");
 //	args.insert(args.end(), "=");
 //	args.insert(args.end(), "13");
-	args.insert(args.end(), "y");
-	args.insert(args.end(), "=");
-	args.insert(args.end(), "bind");
-	args.insert(args.end(), "dog");
-	args.insert(args.end(), "y");
-	args.insert(args.end(), "=");
-	args.insert(args.end(), "29");
+//	args.insert(args.end(), "y");
+//	args.insert(args.end(), "=");
+//	args.insert(args.end(), "bind");
+//	args.insert(args.end(), "dog");
+//	args.insert(args.end(), "y");
+//	args.insert(args.end(), "=");
+//	args.insert(args.end(), "29");
 
 	// check with lexer
 	//args.insert(args.end(), "print");

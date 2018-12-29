@@ -11,6 +11,7 @@
 #include "connectCommand.h"
 #include "whileCommand.h"
 #include "ifCommand.h"
+#include "exitCommand.h"
 
 using namespace std;
 class Parser

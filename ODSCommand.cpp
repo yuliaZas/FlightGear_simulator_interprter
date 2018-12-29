@@ -27,5 +27,6 @@ int ODSCommand::execute(vector<string> args, int index, map<string, double>* sym
         return 3;
     }
     pthread_create(&pthreadID, nullptr, openServer, d);
+    pthread_join(pthreadID, nullptr);
     return 3;
 }
