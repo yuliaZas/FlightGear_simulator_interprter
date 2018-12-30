@@ -18,7 +18,14 @@ int ifCommand::execute(vector<string> args, int index, map<string, double>* symb
 	string expression = "";
 	vector<string> commands;
 	while(args[index] != "{"){
-	    expression += args[index];
+		std::map<string, double >::iterator symbolIter;
+		symbolIter = symbolTable->find(args[index]);
+		if(symbolIter != symbolTable->end()){
+			expression += std::to_string(symbolIter->second);
+		}
+		else{
+			expression += args[index];
+		}
 	    index++;
 	    indexIndent++;
 	}

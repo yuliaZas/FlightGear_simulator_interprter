@@ -44,7 +44,7 @@ Parser::~Parser()
 
 int Parser::parse()
 {
-	Parser::preParser();
+	//Parser::preParser();
 	int index = 0;
 	while (index < tokens.size()) {
 		map <string, command*>::iterator iterCom;

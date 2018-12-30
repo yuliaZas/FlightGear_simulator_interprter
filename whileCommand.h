@@ -1,5 +1,7 @@
 #pragma once
 #include "command.h"
+#include "Expression/ExpressionFactory.h"
+#include "Parser.h"
 class whileCommand :
 	public command
 {
