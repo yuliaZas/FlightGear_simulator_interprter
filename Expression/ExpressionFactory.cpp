@@ -55,7 +55,7 @@ vector<string> ExpressionFactory::stringExpToVec(string str) {
             //negative num
             if (withoutSpaces[j] == '-') {
                 if (isOparator(withoutSpaces[j-1])) {
-                    temp += withoutSpaces[0];
+                    temp += withoutSpaces[j];
                     isNeg = true;
                 }
             }
