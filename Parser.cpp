@@ -33,6 +33,8 @@ Parser::Parser(vector<string> args)
 	commandMap.insert(pair<string, command*>("exit",exitCom));
 	// Initialize an empty bind map
 	this->bindMap = map<string, string>();
+	// add map holder here
+	// send the bindMap and symbolTable to it
 }
 
 
