@@ -21,13 +21,19 @@ void Lexer::read(string str) {
             continue;
         }
         else if (str[i] == '\"') {
-            temp.push_back(str[i]);
+            if (str[i+1] == '\0' || str[i+1] == '\n') {
+                this->stringVec.push_back(temp);
+            }
+            //temp.push_back(str[i+1]);
+            continue;
+        }
+        else if (str[i+1] == '\0' || str[i+1] == '\n') {
+            this->stringVec.push_back(temp);
         }
         else {
             temp.push_back(str[i]);
         }
     }
-    this->stringVec.push_back(temp);
     return;
 }
 

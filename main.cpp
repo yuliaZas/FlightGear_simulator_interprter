@@ -5,6 +5,9 @@
 #include <iostream>
 #include <stdio.h>
 
+
+using namespace std;
+
 int main(int argc, char *argv[]) {
 
 	// check there are enough parameters
@@ -42,4 +45,5 @@ int main(int argc, char *argv[]) {
 
 	}
 	pthread_exit(nullptr);
+
 }
