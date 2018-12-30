@@ -19,6 +19,7 @@ int whileCommand::execute(vector<string> args, int index, map<string, double>* s
 	string expression = "";
 	vector<string> commands;
 
+	// extract the condition expression
 	while(args[index] != "{"){
 		std::map<string, double >::iterator symbolIter;
 		symbolIter = symbolTable->find(args[index]);
@@ -36,18 +37,21 @@ int whileCommand::execute(vector<string> args, int index, map<string, double>* s
 	ExpressionFactory factory = ExpressionFactory();
 	Expression* e = factory.expressionEvaluate(expression);
 
-
+	// extract the command to do if the condition is true
 	while(args[index] != "}"){
 		vector<string>::iterator it = commands.end();
 		commands.insert(it,args[index]);
 		indexIndent++;
 		index++;
 	}
-
+	// initialize parser with the command vector
 	Parser parser = Parser(commands);
+	// calculate the condition expression
 	conditionResualt = e->calculate();
 	while (conditionResualt){
+		// execute the commandds
 		parser.parse();
+		// calculate the condition expression again
 		conditionResualt = e->calculate();
 	}
 
