@@ -44,6 +44,7 @@ Parser::~Parser()
 
 int Parser::parse()
 {
+	Parser::preParser();
 	int index = 0;
 	while (index < tokens.size()) {
 		map <string, command*>::iterator iterCom;
@@ -64,4 +65,51 @@ int Parser::parse()
 		}
 	}
 	return 0;
+}
+void Parser::preParser() {
+	string expression = "";
+	double value;
+	ExpressionFactory factory = ExpressionFactory();
+	// initialize iterators
+	std::vector<string>::iterator start; // to mark the begining of the tokens to delete
+	std::vector<string>::iterator end; // to mark the end of the tokens to delete
+	std::map<string, command*>::iterator iterCom; // itereat throught the command map
+	std::map<string, double >::iterator iterSym; // iteraet throught the symbol table
+	for(std::vector<string>::iterator it = this->tokens.begin(); it != this->tokens.end(); ++it) {
+		// stop for every =
+		if(*it == "="){
+			start = it;
+			++it;
+			if(*it != "bind"){
+				iterCom = this->commandMap.find(*it);
+				// while the token is not a commend asume its fart of the expression
+				while(iterCom == commandMap.end()){
+					iterSym = this->symbolTable.find(*it);
+					// if this token is not a varible then assume it's a number or a sign and add it to the expression string as is
+					if(iterSym == this->symbolTable.end()){
+						expression += *it;
+					}
+						// if the token is a varible add it's value to the string
+					else{
+						expression +=to_string(iterSym->second);
+					}
+					++it;
+					iterCom = this->commandMap.find(*it);
+				}
+				// calculate the value of the expression
+				ExpressionFactory factory = ExpressionFactory();
+				Expression* e = factory.expressionEvaluate(expression);
+				// empty exprssion string
+				expression = "";
+				// place the value in the token array instead of the expression
+				*start = std::to_string(value);
+				++start;
+				// delete exess cells
+				tokens.erase(start, end);
+			}
+			else{
+				it++;
+			}
+		}
+	}
 }

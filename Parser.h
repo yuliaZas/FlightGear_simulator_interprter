@@ -12,6 +12,7 @@
 #include "whileCommand.h"
 #include "ifCommand.h"
 #include "exitCommand.h"
+#include "Expression/ExpressionFactory.h"
 
 using namespace std;
 class Parser
@@ -25,5 +26,6 @@ public:
 	Parser(vector<string> args);
 	~Parser();
 	int parse();
+	void preParser();
 };
 
