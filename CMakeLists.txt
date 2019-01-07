@@ -57,4 +57,4 @@ add_executable(
         Expression/ExpressionFactory.cpp
         Lexer.h
         Lexer.cpp
-        openDataServer.cpp openDataServer.h connectToServer.cpp connectToServer.h exitCommand.cpp exitCommand.h)
+        openDataServer.cpp openDataServer.h connectToServer.cpp connectToServer.h exitCommand.cpp exitCommand.h State.cpp State.h)
