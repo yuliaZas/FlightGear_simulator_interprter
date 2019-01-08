@@ -21,7 +21,7 @@ public:
     //void setPrev(State prev);
     bool equals(State s);
     //double getPriority();
-
+    State<T>(){}
 
     State<T>(T state, double cost) {
         this->state = state;
