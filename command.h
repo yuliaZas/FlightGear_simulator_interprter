@@ -12,6 +12,6 @@ public:
 	command();
 	~command();
 public:
-	virtual int execute(vector <string> args, int index, map<string, double> *symbolTable, map<string, command*> commandParser) = 0;
+	virtual int execute(vector <string> args, int index, map<string, double> *symbolTable, map<string, command*> commandParser, map<string, string> *bindMap) = 0;
 };
 

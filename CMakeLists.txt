@@ -2,12 +2,13 @@ cmake_minimum_required(VERSION 3.12)
 project(flight_simulator)
 
 set(CMAKE_CXX_STANDARD 14)
+set (CMAKE_CXX_FLAGS "-pthread")
 
 include_directories(.)
 
-add_executable(flight_simulator
-        assigmentCommand.cpp
+add_executable(
         assigmentCommand.h
+        assigmentCommand.cpp
         command.cpp
         command.h
         connectCommand.cpp
@@ -56,4 +57,4 @@ add_executable(flight_simulator
         Expression/ExpressionFactory.cpp
         Lexer.h
         Lexer.cpp
-        )
+        openDataServer.cpp openDataServer.h connectToServer.cpp connectToServer.h exitCommand.cpp exitCommand.h State.cpp State.h ISearchable.cpp ISearchable.h matrixMaze.cpp matrixMaze.h)

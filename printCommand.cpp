@@ -8,7 +8,7 @@ printCommand::~printCommand()
 {
 }
 
-int printCommand::execute(vector <string> args, int index, map<string, double> *symbolTable, map<string, command*> commandParser)
+int printCommand::execute(vector <string> args, int index, map<string, double> *symbolTable, map<string, command*> commandParser, map<string, string> *bindMap)
 {
 	string printString = args[index + 1];
 	if (printString[0] == ' " ') {

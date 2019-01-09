@@ -9,6 +9,6 @@ class printCommand :
 public:
 	printCommand();
 	~printCommand();
-	int execute(vector <string> args, int index, map<string, double> *symbolTable, map<string, command*> commandParser);
+	int execute(vector <string> args, int index, map<string, double> *symbolTable, map<string, command*> commandParser, map<string, string> *bindMap);
 };
 
